@@ -22,7 +22,6 @@ involving live streamers and provides **direct links** to their channels.
 ## 🖥️ Requirements
 
 - Python 3.x  
-- Internet connection  
 - Command Prompt / Terminal  
 
 ---
@@ -81,8 +80,6 @@ python main.py
 ```text
 .
 ├── main.py        # Main application logic
-├── main.spec      # PyInstaller spec file
-├── build/         # Compiled executable output
 └── .env           # Environment variables (not committed)
 ```
 
@@ -115,7 +112,6 @@ python main.py
 ### APIs
 
 * HenrikDev Valorant API
-* Twitch API
 
 ---
 
@@ -127,4 +123,5 @@ All game data is retrieved through publicly available APIs.
 ```
 
 ---
+
 
