@@ -1,76 +1,134 @@
-================================================================================
-                        VALORANT AFTER-GAME ANALYZER
-================================================================================
+---
 
-DESCRIPTION:
-This tool analyzes your most recent Valorant match and identifies which opponents
-are currently streaming on Twitch. It then displays your interactions (kills and
-deaths) with those live streamers.
+# 🎮 Valorant After-Game Analyzer
 
-This tool only runs on command prompt
+A command-line tool that analyzes your **most recent Valorant match** and identifies which opponents are **live on Twitch**, then shows your **kills and deaths** against those streamers.
 
-PURPOSE:
-- Fetch your latest match data from the Valorant API
-- Identify all opponents from that match
-- Search for those opponents on Twitch
-- Track which enemies you killed or were killed by
-- Provide direct links to their Twitch channels for viewing
+> ⚠️ Runs **only in Command Prompt / Terminal** (no GUI).
 
-DEPENDENCIES:
-- Python 3.x
-- requests library (for API calls)
-- python-dotenv (for environment variables)
+---
 
-SETUP:
-1. Create a .env file in this directory with the following:
-   AUTH_TOKEN=<your_valorant_api_token>
+## 📌 Description
 
-2. Configure your Valorant player info in the CONFIG section:
-   - region (e.g., "na", "eu")
-   - platform (e.g., "pc")
-   - username (your in-game name)
-   - tag (your in-game tag number)
+This tool:
 
-3. Install dependencies:
-   pip install requests python-dotenv
+* Fetches your **latest Valorant match**
+* Identifies **all opponents**
+* Searches each opponent on **Twitch**
+* Lets you confirm which opponents are **currently live**
+* Displays your **kills/deaths** against those live streamers
+* Provides **direct Twitch links** for easy viewing
 
-USAGE:
+---
+
+## 🎯 Purpose
+
+* Retrieve match data from the Valorant API
+* Detect opponents from your last game
+* Find opponents on Twitch
+* Track:
+
+  * Who you killed
+  * Who killed you
+* Quickly jump into their live streams
+
+---
+
+## ⚙️ Dependencies
+
+* **Python 3.x**
+* **requests** – API calls
+* **python-dotenv** – environment variable handling
+
+Install dependencies:
+
+```bash
+pip install requests python-dotenv
+```
+
+---
+
+## 🛠️ Setup
+
+### 1️⃣ Create a `.env` file
+
+In the project root, add:
+
+```env
+AUTH_TOKEN=your_valorant_api_token
+```
+
+### 2️⃣ Configure player info
+
+Edit the **CONFIG** section in the script:
+
+* `region` (e.g. `na`, `eu`)
+* `platform` (e.g. `pc`)
+* `username` (your in-game name)
+* `tag` (your Riot tag)
+
+---
+
+## ▶️ Usage
+
+Run the script:
+
+```bash
 python main.py
+```
 
-The script will:
-1. Fetch your latest match
-2. Open Twitch search pages for each opponent
-3. Prompt you to mark which opponents are live
-4. Show your interactions (kills/deaths) with live streamers
-5. Display Twitch links for easy access
+### What happens next:
 
-FILES:
-- main.py: Main script
-- main.spec: PyInstaller spec file for creating executable
-- build/: Contains compiled executable files
+1. Your latest match is fetched
+2. Twitch search pages open for each opponent
+3. You confirm which opponents are live
+4. The script shows:
 
-NOTES:
-- Requires active internet connection
-- Opens browser tabs for Twitch searches
-- Uses Henrik Dev Valorant API for match data
+   * Your kills vs them
+   * Their kills vs you
+5. Twitch links are displayed for quick access
 
-================================================================================
+---
 
-LANGUAGES, TOOLS & FRAMEWORKS/LIBRARIES:
+## 📁 Project Structure
 
-Languages:
-- Python 3.x
+```
+.
+├── main.py        # Main script
+├── main.spec      # PyInstaller spec file
+├── build/         # Compiled executable output
+├── .env           # Environment variables (not committed)
+```
 
-Libraries:
-- requests - HTTP library for API calls
-- python-dotenv - Environment variable management
-- webbrowser - Browser automation
+---
 
-Tools:
-- PyInstaller - Executable packaging (main.spec)
+## 📝 Notes
 
-APIs:
-- Henrik Dev Valorant API - Match and player data
-- Twitch API - Streamer information
+* Requires an **active internet connection**
+* Opens **browser tabs** for Twitch searches
+* Match data provided by **Henrik Dev Valorant API**
 
-================================================================================
+---
+
+## 🧰 Languages, Tools & APIs
+
+### Languages
+
+* Python 3.x
+
+### Libraries
+
+* `requests` – HTTP requests
+* `python-dotenv` – environment variables
+* `webbrowser` – browser automation
+
+### Tools
+
+* **PyInstaller** – executable packaging
+
+### APIs
+
+* **Henrik Dev Valorant API** – match & player data
+* **Twitch API** – streamer lookup
+
+---
